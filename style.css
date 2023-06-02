@@ -1,6 +1,8 @@
-h2{
-    color:antiquewhite
+h1{
+    color:red
 }
+p {text-align: center;}
+
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
