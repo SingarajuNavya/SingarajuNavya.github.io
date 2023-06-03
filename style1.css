@@ -1,6 +1,12 @@
 .name{
-    font-size:80px;
+    font-size:40px;
     font-weight:bold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.designation{
+    font-size: 25;
+    font-style: italic;
     margin-top: 0;
     margin-bottom: 0;
 }
