@@ -1,0 +1,17 @@
+.container{
+    margin-left:80px;
+}
+.card{
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 30px;
+    padding-left:10px;
+    padding-top:10px;
+    transition: 2s;
+    padding-bottom:30px;
+}
+.card:hover{
+    box-shadow: 0 20px 34px 0 rgba(0,0,0,0.2) ;
+}
+.card-image{
+width: 100px;
+}
