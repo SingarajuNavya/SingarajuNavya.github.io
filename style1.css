@@ -1,3 +1,6 @@
+.container{
+    margin-left: 80px;
+}
 .card{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     width:30%;
@@ -11,18 +14,14 @@
 
 }
 .name{
-    font-size:40px;
+    font-size:30px;
     font-weight:bold;
     margin-top: 0;
     margin-bottom: 0;
 }
 .designation{
-    font-size: 25;
+    font-size: 30px;
     font-style: italic;
     margin-top: 0;
     margin-bottom: 0;
-}
-img {
-    max-width:100%;
-    height:auto;
 }
