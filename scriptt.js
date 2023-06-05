@@ -7,11 +7,11 @@ var changemypic=function()
     if(isdata1)
     {
         displaydata=data2;
-        isdata1=true;
+        isdata1=false;
     }
     else{
         displaydata=data1;
-        data2=false;
+        isdata1=true;
     }
     document.getElementById("myimage").src=displaydata.image;
   document.getElementById("myname").innerHTML=displaydata.name;
