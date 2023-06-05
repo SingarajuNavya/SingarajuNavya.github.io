@@ -7,7 +7,7 @@ var changemypic=function()
     if(isdata1)
     {
         displaydata=data2;
-        isdata1=false;
+        isdata1=true;
     }
     else{
         displaydata=data1;
