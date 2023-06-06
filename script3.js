@@ -8,7 +8,7 @@ var changemypic=function()
         document.getElementById("myimage").src=userinfo.image;
         document.getElementById("myname").innerHTML=userinfo.name;
 
-        document.getElementById("mydesign").innerHTML=userinfo.username;
+        document.getElementById("mydesig").innerHTML=userinfo.username;
 
     })
  
