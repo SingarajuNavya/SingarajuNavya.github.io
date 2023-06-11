@@ -1,25 +1,55 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const apiKey = 'YOUR_API_KEY';
-    const searchBtn = document.getElementById('searchBtn');
-    
-    searchBtn.addEventListener('click', function() {
-      const city = document.getElementById('cityInput').value;
-      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=delhi&appid=eb7a2d4a5a9b284fe54b7bb547238443&units=metric`;
+const apiKey = "272533ba3f9cd98218b65be8083b14a9";
+
+const main = document.getElementById('main');
+const form = document.getElementById('form');
+const search = document.getElementById('search');
   
-      // Fetch weather data from the API
-      fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => {
-          // Update the HTML elements with weather information
-          document.getElementById('location').textContent = data.name;
-          document.getElementById('temperature').textContent = `Temperature: ${data.main.temp}°C`;
-          document.getElementById('description').textContent = `Description: ${data.weather[0].description}`;
-          document.getElementById('humidity').textContent = `Humidity: ${data.main.humidity}%`;
-          document.getElementById('wind-speed').textContent = `Wind Speed: ${data.wind.speed} m/s`;
-          // You can add more elements to display additional weather information as needed
-        })
-        .catch(error => {
-          console.log('Error fetching weather data:', error);
-        });
-    });
-});
+const url = (city)=> `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+
+
+async function getWeatherByLocation(city){
+     
+         const resp = await fetch(url(city), {
+             origin: "cros" });
+         const respData = await resp.json();
+     
+           addWeatherToPage(respData);
+          
+     }
+
+      function addWeatherToPage(data){
+          const temp = Ktoc(data.main.temp);
+
+          const weather = document.createElement('div')
+          weather.classList.add('weather');
+
+          weather.innerHTML = `
+          <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°C <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>
+          <small>${data.weather[0].main}</small>
+          
+          `;
+
+
+        //   cleanup 
+          main.innerHTML= "";
+           main.appendChild(weather);
+      };
+
+
+     function Ktoc(K){
+         return Math.floor(K - 273.15);
+     }
+
+
+
+     form.addEventListener('submit',(e) =>{
+        e.preventDefault();
+
+        const city = search.value;
+
+        if(city){
+            getWeatherByLocation(city)
+        }
+
+     });
+  
