@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
-    <link rel="stylesheet" href="weather.css">
+  <title>Weather App</title>
+  <link rel="stylesheet" type="text/css" href="weather.css">
 </head>
-
 <body>
-    <form id="form">
-        <input type="text" id="search" placeholder="Search By Loaction" autocomplete="off">
-    </form>
-    <main id="main">
+  <div class="container">
+    <h1>Weather App</h1>
+    <div class="weather-info">
+      <h2 id="location"></h2>
+      <h3 id="temperature"></h3>
+      <h3 id="description"></h3>
+    </div>
+    <div class="location-box">
+      <select id="location-select">
+        <option value="delhi">Delhi</option>
+        <option value="mumbai">Mumbai</option>
+        <option value="london">London</option>
+        <option value="new-york">New York</option>
+      </select>
+      <button id="searchBtn">Get Weather</button>
+    </div>
+    <div class="weather-icon">
+      <img id="weatherIcon" src="" alt="Weather Icon">
+    </div>
+  </div>
 
-    </main>
-
-    <script src="weather.js"></script>
+  <script src="weather.js"></script>
 </body>
-
 </html>
